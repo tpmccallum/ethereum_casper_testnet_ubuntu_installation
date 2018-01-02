@@ -5,7 +5,11 @@ Disclaimer - see Appendix B at the end of this document.
 
 `
 sudo apt-get update
+`
+`
 sudo apt-get upgrade
+`
+`
 sudo apt-get install curl
 `
 
