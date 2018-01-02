@@ -46,13 +46,15 @@ Please use the -H (home) argument for sudo
 sudo -H pip3 install web3
 `
 
-Fetch casper docker containers from @karlfloersch github
+Fetch casper docker containers from karlfloersch on github
 
 `
 git clone http://github.com/karlfloersch/docker-pyeth-dev
-
+`
+`
 cd docker-pyeth-dev
-
+`
+`
 make new-account
 `
 
