@@ -91,10 +91,33 @@ web3.eth.getBlock('latest')
 `
 # Getting testnet ETH
 Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
-## Faucet
+
+## Faucet - do not use
+Install docker compose
+
 `
 sudo apt install docker-compose
 `
+Edit the yaml file (change the version on the first line to 2.0)
+
+`
+vi docker-compose.yml
+`
+
+Run the following command
+`
+docker-compose up
+`
+Open a new terminal and run the following commands
+
+`
+docker cp utils/faucet_util.py bootstrap:/ethereum/
+docker exec -it bootstrap bash
+`
+## Faucet - do not use
+
+
+
 
 ## Mining
 The following command will start your node mining for ETH. If you have problems stopping and starting the docker process please see Appendix A at the end of this document.
