@@ -5,9 +5,7 @@ Disclaimer - see Appendix B at the end of this document.
 
 `
 sudo apt-get update
-
 sudo apt-get upgrade
-
 sudo apt-get install curl
 `
 
@@ -15,11 +13,8 @@ sudo apt-get install curl
 
 `
 curl -fsSL get.docker.com -o get-docker.sh
-
 sudo sh get-docker.sh
-
 sudo usermod -aG docker $USER
-
 sudo shutdown -r now
 `
 
