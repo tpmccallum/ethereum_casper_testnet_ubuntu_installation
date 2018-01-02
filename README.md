@@ -153,6 +153,8 @@ or like this
 `
 web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
 `
+# Validating
+
 
 # Appendix A
 Stopping the docker process from running seems a bit problematic. When hitting ctrl + c you are asked to hit ctrl + c again to terminate or "enter" to enter the console mode. In my experience repeating ctrl + c did not work. I now chose to hit ctrl + c once then "enter" once to access the console mode. Once I am in the console I type quit and this gets me back to my Ubuntu command line where I can clean up using the following step.
@@ -163,4 +165,4 @@ Once you have stopped the docker process you will need to run the following comm
 docker rm validator
 `
 # Appendix B
-This work is only intended for myself. It is my own record of my personal experience of installing Casper. This work is not endorsed. It is not recommended that you use this work but rather that you investigate the installation for yourself. The content of this work is based on https://hackmd.io/s/Hk6UiFU7z by @karlfloersch < https://github.com/karlfloersch >.
+This work is only intended for myself at this stage. It is a record of my personal experience installing Casper today. This work is not endorsed. It is not recommended for use yet. The content of this work is based on https://hackmd.io/s/Hk6UiFU7z by @karlfloersch < https://github.com/karlfloersch >.
