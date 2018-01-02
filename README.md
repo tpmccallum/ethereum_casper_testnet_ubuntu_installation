@@ -1,4 +1,5 @@
 # Installing Casper on Ubuntu 16.04 LTS
+Disclaimer - see Appendix B at the end of this document.
 
 ## Housekeeping
 
@@ -161,4 +162,5 @@ Once you have stopped the docker process you will need to run the following comm
 `
 docker rm validator
 `
-
+# Appendix B
+This work is only intended for myself. It is my own record of my personal experience of installing Casper. This work is not endorsed. It is not recommended that you use this work but rather that you investigate the installation for yourself. The content of this work is based on https://hackmd.io/s/Hk6UiFU7z by @karlfloersch < https://github.com/karlfloersch >.
