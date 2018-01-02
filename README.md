@@ -174,4 +174,4 @@ Once you have stopped the docker process you will need to run the following comm
 docker rm validator
 `
 # Appendix B
-This work is only intended for myself at this stage. It is a record of my personal experience installing Casper today. This work is not endorsed. It is not recommended for use yet. The content of this work is based on https://hackmd.io/s/Hk6UiFU7z by @karlfloersch < https://github.com/karlfloersch >.
+This work is only intended for sandpit testing on a fresh Ubuntu instance this stage. It is just a record of my personal experience installing Casper today. This work is not endorsed. It is not recommended for use and carries no guarantees.
