@@ -5,7 +5,9 @@ Disclaimer - see Appendix B at the end of this document.
 
 `
 sudo apt-get update
+
 sudo apt-get upgrade
+
 sudo apt-get install curl
 `
 
@@ -13,8 +15,11 @@ sudo apt-get install curl
 
 `
 curl -fsSL get.docker.com -o get-docker.sh
+
 sudo sh get-docker.sh
+
 sudo usermod -aG docker $USER
+
 sudo shutdown -r now
 `
 
@@ -40,7 +45,9 @@ Fetch casper docker containers from @karlfloersch's github
 
 `
 git clone http://github.com/karlfloersch/docker-pyeth-dev
+
 cd docker-pyeth-dev
+
 make new-account
 `
 
@@ -87,10 +94,15 @@ from web3 import Web3, HTTPProvider
 web3 = Web3(HTTPProvider('http://localhost:8545'))
 web3.eth.getBlock('latest')
 `
+# Getting testnet ETH
+Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
+## Faucet
+`
+sudo apt install docker-compose
+`
 
-# Mining
-
-Before you can run a validator you have to earn testnet ETH by mining. The following command will start your node mining for ETH. If you have problems stopping and starting the docker process please see Appendix A at the end of this document.
+## Mining
+The following command will start your node mining for ETH. If you have problems stopping and starting the docker process please see Appendix A at the end of this document.
 
 `
 make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
