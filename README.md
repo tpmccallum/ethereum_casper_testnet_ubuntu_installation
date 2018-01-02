@@ -155,6 +155,8 @@ web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
 `
 # Validating
 
+The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
+
 
 # Appendix A
 Stopping the docker process from running seems a bit problematic. When hitting ctrl + c you are asked to hit ctrl + c again to terminate or "enter" to enter the console mode. In my experience repeating ctrl + c did not work. I now chose to hit ctrl + c once then "enter" once to access the console mode. Once I am in the console I type quit and this gets me back to my Ubuntu command line where I can clean up using the following step.
