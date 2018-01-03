@@ -49,7 +49,7 @@ sudo -H pip3 install web3
 Fetch casper docker containers from karlfloersch on github
 
 `
-git clone http://github.com/karlfloersch/docker-pyeth-dev
+git clone https://github.com/karlfloersch/docker-pyeth-dev.git
 `
 `
 cd docker-pyeth-dev
