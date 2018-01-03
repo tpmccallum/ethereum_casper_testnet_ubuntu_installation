@@ -113,18 +113,19 @@ web3 = Web3(HTTPProvider('http://localhost:8545'))
 `
 web3.eth.getBlock('latest')
 `
+
 # Getting testnet ETH
 
 Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
 
 ## Faucet
 
-Currently in the process of obtaining testnet ETH from a faucet. More to come.
+Currently in the process of obtaining testnet ETH from a faucet. More to come. It appears that there is no faucet for the Casper FFG testnet at this early stage and therefore there are two ways to obtain Casper FFG testnet ETH. Firstly by mining, or secondly by asking.
 
 
 ## Mining
 
-The following command will start your node mining for ETH. If you have problems stopping and starting the docker process please see Appendix A at the end of this document.
+The following command will start your node mining for ETH.
 
 `
 make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
@@ -158,35 +159,6 @@ web3.eth.coinbase
 '0xcFA7032aF32A5200023332E141BaE61f944DE28D'
 `
 
-of course, as the coinbase address is the first element in the array, it can also be obtained by using the following command.
-
-`
-web3.eth.accounts[0]
-'0xcFA7032aF32A5200023332E141BaE61f944DE28D'
-`
-This syntax introduces the idea that we can obtain the other address by using commands like the following
-
-`
-web3.eth.accounts[1]
-`
-
-The above outputs the address
-
-`
-'0xcFA7032aF32A5200023332E141BaE61f944DE28D'
-`
-
-and in turn we are able to obtain the balance of this account like this
-
-`
-web3.eth.getBalance(web3.eth.accounts[1])
-`
-
-or like this
-
-`
-web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
-`
 # Validating
 
 The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
