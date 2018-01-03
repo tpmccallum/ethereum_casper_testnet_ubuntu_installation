@@ -54,13 +54,14 @@ git clone https://github.com/karlfloersch/docker-pyeth-dev.git
 `
 cd docker-pyeth-dev
 `
+
+Create a new Ethereum Account.
+
 `
 make new-account
 `
 
-## Keystore
-
-The newly created account details are available for you in the following directory
+Please note, the above step of creating a new account only has to be performed once. The newly created account details are stored in the following directory and will remain even after terminating docker processes or even rebooting the operating system.
 
 `
 /home/casper/docker-pyeth-dev/validator/data/config/keystore
@@ -68,23 +69,55 @@ The newly created account details are available for you in the following directo
 
 # Running
 
-To start Casper try command A OR command B below 
+There are a few different modalities to running the Casper FFG node.
 
-A
+## Connecting a node to the public testnet
+
+The syntax to connect to the public testnet is as follows
+
+`
+make run-node bootstrap_node=$enode@$serverIp:$serverPort
+`
+
+For example
 
 `
 make run-node bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
 `
 
-B
+# Running a validating node (participating in the PoS consensus process)
+
+The syntax to run a validating node is as follows
 
 `
-make run-node bootstrap_node=enode://a120401858c93f0be73ae7765930174689cad026df332f7e06a047ead917cee193e9210e899c3143cce55dd991493227ecea15de42aa05b9b730d2189e19b567@52.87.179.32:30303
+make run-node validate=$boolValidate deposit=$ethDeposit bootstrap_node=$enode@$serverIp:$serverPort
+`
+
+For example
+
+`
+make run-node validate=true deposit=2000 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
+`
+
+Please note: Before you can run a validator you need to have at least 1500 Casper FFG testnet ETH. Whilst a "faucet may be available soon" [1] you could try asking for ETH by providing an address or try earning ETH by mining the Casper FFG testnet.
+
+## Mining on the public Casper FFG testnet
+
+The syntax to mine on the public tesnet is as follows
+
+`
+make run-node mine_percent=$percent bootstrap_node=$enode@$serverIp:$serverPort
+`
+
+For example
+
+`
+make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
 `
 
 # Getting testnet ETH
 
-Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
+
 
 ## Faucet
 
@@ -107,13 +140,6 @@ web3.eth.getBalance("0x33b5f0e0013da8C20c6521A645843b22c1947B23")
 0
 `
 
-## Mining
-
-The following command will start your node mining for ETH.
-
-`
-make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
-`
 
 # Interacting using Web3
 
@@ -176,9 +202,7 @@ web3.eth.coinbase
 '0xcFA7032aF32A5200023332E141BaE61f944DE28D'
 `
 
-# Validating
 
-The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
 
 # Cleaning up
 
@@ -206,4 +230,6 @@ In this instance you can stop the docker process (before using the rm command, a
 `
 docker stop d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750
 `
+
+[1] http://notes.eth.sg/MYEwhswJwMzAtADgCwEYBM9kAYBGJ4wBTETKdGZdXAVmRvUQDYg=?view#
 
