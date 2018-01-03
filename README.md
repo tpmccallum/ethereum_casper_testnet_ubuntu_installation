@@ -39,6 +39,7 @@ sudo apt-get install python3-pip
 `
 
 ## Web3 
+
 Please use the -H (home) argument for sudo
 
 `
@@ -105,13 +106,16 @@ web3 = Web3(HTTPProvider('http://localhost:8545'))
 web3.eth.getBlock('latest')
 `
 # Getting testnet ETH
+
 Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
 
 ## Faucet
+
 Currently in the process of obtaining testnet ETH from a faucet. More to come.
 
 
 ## Mining
+
 The following command will start your node mining for ETH. If you have problems stopping and starting the docker process please see Appendix A at the end of this document.
 
 `
@@ -180,22 +184,30 @@ web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
 The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
 
 # Cleaning up
+
 To see what docker processes you have running use the following command
+
 `
 docker ps
 `
+
 If you want to clean up your environment, you can remove docker processes using the rm command
 
 `
 docker rm validator
 `
+
 However, if the docker processes are still running you will receive an error message like this 
+
 `
 casper@casper-VirtualBox:~/docker-pyeth-dev$ docker rm miner
 Error response from daemon: You cannot remove a running container d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750. Stop the container before attempting removal or force remove
 
 `
+
 In this instance you can stop the docker process (before using the rm command, as mentioned above) by passing the container ID into the stop command like this
+
 `
 casper@casper-VirtualBox:~/docker-pyeth-dev$ docker stop d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750
 `
+
