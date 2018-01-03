@@ -96,10 +96,10 @@ Get your local unique casper docker container id by typing
 docker ps
 `
 
-Use your docker id from the previous step in the next command by replacing replaceMeWithId
+Place your docker "CONTAINER ID" from the previous command's output into the next command
 
 `
-docker exec -it replaceMeWithId python
+docker exec -it replaceMeWithCONTAINERID python
 `
 
 Type these commands at the Python prompt
