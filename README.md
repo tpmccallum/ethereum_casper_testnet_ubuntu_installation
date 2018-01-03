@@ -1,5 +1,4 @@
 # Installing Casper on Ubuntu 16.04 LTS
-Disclaimer - see Appendix B at the end of this document.
 
 ## Housekeeping
 
@@ -60,7 +59,7 @@ make new-account
 
 # Running
 
-To start Casper try command A OR command B below (if you need to restart/rerun please see appendix A at the end of this doc)
+To start Casper try command A OR command B below 
 
 A
 
@@ -180,14 +179,8 @@ web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
 
 The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
 
-
-# Appendix A
-Stopping the docker process from running seems a bit problematic. When hitting ctrl + c you are asked to hit ctrl + c again to terminate or "enter" to enter the console mode. In my experience repeating ctrl + c did not work. I now chose to hit ctrl + c once then "enter" once to access the console mode. Once I am in the console I type quit and this gets me back to my Ubuntu command line where I can clean up using the following step.
-
-Once you have stopped the docker process you will need to run the following command before restarting.
+# Cleaning up
 
 `
 docker rm validator
 `
-# Appendix B
-This work is only intended for sandpit testing on a fresh Ubuntu instance this stage. It is just a record of my personal experience installing Casper today. This work is not endorsed. It is not recommended for use and carries no guarantees.
