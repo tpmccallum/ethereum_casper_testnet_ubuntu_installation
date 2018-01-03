@@ -82,38 +82,6 @@ B
 make run-node bootstrap_node=enode://a120401858c93f0be73ae7765930174689cad026df332f7e06a047ead917cee193e9210e899c3143cce55dd991493227ecea15de42aa05b9b730d2189e19b567@52.87.179.32:30303
 `
 
-# Interacting using Web3
-
-Open a new terminal 
-
-`
-ctrl + shift + t 
-`
-
-Get your local unique casper docker container id by typing
-
-`
-docker ps
-`
-
-Place your docker "CONTAINER ID" from the previous command's output into the next command
-
-`
-docker exec -it replaceMeWithCONTAINERID python
-`
-
-Type these commands at the Python prompt
-
-`
-from web3 import Web3, HTTPProvider
-`
-`
-web3 = Web3(HTTPProvider('http://localhost:8545'))
-`
-`
-web3.eth.getBlock('latest')
-`
-
 # Getting testnet ETH
 
 Before you can run a validator you need to have at least 1500 testnet ETH. You can get testet ETH from a faucet or earn it by mining.
@@ -146,6 +114,39 @@ The following command will start your node mining for ETH.
 `
 make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
 `
+
+# Interacting using Web3
+
+Open a new terminal 
+
+`
+ctrl + shift + t 
+`
+
+Get your local unique casper docker container id by typing
+
+`
+docker ps
+`
+
+Place your docker "CONTAINER ID" from the previous command's output into the next command
+
+`
+docker exec -it replaceMeWithCONTAINERID python
+`
+
+Type these commands at the Python prompt
+
+`
+from web3 import Web3, HTTPProvider
+`
+`
+web3 = Web3(HTTPProvider('http://localhost:8545'))
+`
+`
+web3.eth.getBlock('latest')
+`
+
 
 # Checking accounts and account balances
 
