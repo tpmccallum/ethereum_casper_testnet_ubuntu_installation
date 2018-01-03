@@ -120,8 +120,24 @@ Before you can run a validator you need to have at least 1500 testnet ETH. You c
 
 ## Faucet
 
-Currently in the process of obtaining testnet ETH from a faucet. More to come. It appears that there is no faucet for the Casper FFG testnet at this early stage and therefore there are two ways to obtain Casper FFG testnet ETH. Firstly by mining, or secondly by asking.
+It appears that there is no faucet for the Casper FFG testnet at this early stage. Below is an example of a request for testnet ETH from ropsten. As demonstrated, while the request from ropsten succeeded, the ETH requested did not appear in the Casper FFG testnet. 
 
+`
+wget http://faucet.ropsten.be:3001/donate/0x33b5f0e0013da8C20c6521A645843b22c1947B23
+Resolving faucet.ropsten.be (faucet.ropsten.be)... 109.123.70.141
+Connecting to faucet.ropsten.be (faucet.ropsten.be)|109.123.70.141|:3001... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 153 [application/json]
+Saving to: 0x33b5f0e0013da8C20c6521A645843b22c1947B23
+100%
+`
+
+`
+web3.eth.getBalance("0x33b5f0e0013da8C20c6521A645843b22c1947B23")
+`
+`
+0
+`
 
 ## Mining
 
