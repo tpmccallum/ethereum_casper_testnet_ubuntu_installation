@@ -58,6 +58,14 @@ cd docker-pyeth-dev
 make new-account
 `
 
+## Keystore
+
+The newly created account details are available for you in the following directory
+
+`
+/home/casper/docker-pyeth-dev/validator/data/config/keystore
+`
+
 # Running
 
 To start Casper try command A OR command B below 
