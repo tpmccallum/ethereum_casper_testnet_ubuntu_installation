@@ -200,7 +200,7 @@ docker rm validator
 However, if the docker processes are still running you will receive an error message like this 
 
 `
-casper@casper-VirtualBox:~/docker-pyeth-dev$ docker rm miner
+docker rm miner
 Error response from daemon: You cannot remove a running container d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750. Stop the container before attempting removal or force remove
 
 `
@@ -208,6 +208,6 @@ Error response from daemon: You cannot remove a running container d8fb8927fce53d
 In this instance you can stop the docker process (before using the rm command, as mentioned above) by passing the container ID into the stop command like this
 
 `
-casper@casper-VirtualBox:~/docker-pyeth-dev$ docker stop d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750
+docker stop d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750
 `
 
