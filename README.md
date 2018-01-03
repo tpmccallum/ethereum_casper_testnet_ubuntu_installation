@@ -98,7 +98,11 @@ Type these commands at the Python prompt
 
 `
 from web3 import Web3, HTTPProvider
+`
+`
 web3 = Web3(HTTPProvider('http://localhost:8545'))
+`
+`
 web3.eth.getBlock('latest')
 `
 # Getting testnet ETH
