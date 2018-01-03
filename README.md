@@ -180,7 +180,22 @@ web3.eth.getBalance('0xcFA7032aF32A5200023332E141BaE61f944DE28D')
 The validating (running a validator) section will be tested/documented once I have enough testnet ETH for a deposit. I am both mining and asking for testnet ETH from the community.
 
 # Cleaning up
+To see what docker processes you have running use the following command
+`
+docker ps
+`
+If you want to clean up your environment, you can remove docker processes using the rm command
 
 `
 docker rm validator
+`
+However, if the docker processes are still running you will receive an error message like this 
+`
+casper@casper-VirtualBox:~/docker-pyeth-dev$ docker rm miner
+Error response from daemon: You cannot remove a running container d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750. Stop the container before attempting removal or force remove
+
+`
+In this instance you can stop the docker process (before using the rm command, as mentioned above) by passing the container ID into the stop command like this
+`
+casper@casper-VirtualBox:~/docker-pyeth-dev$ docker stop d8fb8927fce53dfb9e23d1a6f819899fdf1afd7aa22cf6168c4dadddc3d11750
 `
