@@ -44,9 +44,9 @@ Please use the -H (home) argument for sudo
 
 `
 sudo -H pip3 install web3
+`
 
 ## Ethereum
-`
 
 Fetch casper docker containers from karlfloersch on github
 
