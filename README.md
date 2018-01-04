@@ -71,7 +71,7 @@ Please note, the above step of creating a new account only has to be performed o
 
 There are a few different modalities to running the Casper FFG node.
 
-## Connecting a node to the public testnet
+## Connecting only
 
 The syntax to connect to the public testnet is as follows
 
@@ -85,7 +85,7 @@ For example
 make run-node bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
 `
 
-# Running a validating node (participating in the PoS consensus process)
+## Running a validating node
 
 The syntax to run a validating node is as follows
 
@@ -101,7 +101,7 @@ make run-node validate=true deposit=2000 bootstrap_node=enode://d3260a710a752b92
 
 Please note: Before you can run a validator you need to have at least 1500 Casper FFG testnet ETH. Whilst a "faucet may be available soon" [1] you could try asking for ETH by providing an address or try earning ETH by mining the Casper FFG testnet.
 
-## Mining on the public Casper FFG testnet
+## Mining
 
 The syntax to mine on the public tesnet is as follows
 
@@ -115,33 +115,7 @@ For example
 make run-node mine_percent=90 bootstrap_node=enode://d3260a710a752b926bb3328ebe29bfb568e4fb3b4c7ff59450738661113fb21f5efbdf42904c706a9f152275890840345a5bc990745919eeb2dfc2c481d778ee@54.167.247.63:30303
 `
 
-# Getting testnet ETH
-
-
-
-## Faucet
-
-It appears that there is no faucet for the Casper FFG testnet at this early stage. Below is an example of a request for testnet ETH from ropsten. As demonstrated, while the request from ropsten succeeded, the ETH requested did not appear in the Casper FFG testnet. 
-
-`
-wget http://faucet.ropsten.be:3001/donate/0x33b5f0e0013da8C20c6521A645843b22c1947B23
-Resolving faucet.ropsten.be (faucet.ropsten.be)... 109.123.70.141
-Connecting to faucet.ropsten.be (faucet.ropsten.be)|109.123.70.141|:3001... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 153 [application/json]
-Saving to: 0x33b5f0e0013da8C20c6521A645843b22c1947B23
-100%
-`
-
-`
-web3.eth.getBalance("0x33b5f0e0013da8C20c6521A645843b22c1947B23")
-`
-`
-0
-`
-
-
-# Interacting using Web3
+# Interacting with your running node using Web3
 
 Open a new terminal 
 
@@ -174,7 +148,7 @@ web3.eth.getBlock('latest')
 `
 
 
-# Checking accounts and account balances
+## Checking accounts and account balances
 
 You can list all of your accounts by using the following commands
 
@@ -195,6 +169,34 @@ You can view the balance of each account in the array by specifying the index. F
 web3.eth.getBalance(web3.eth.accounts[0])
 `
 
+
+# Clarifying the Ethereum testnets
+
+The https://testnet.etherscan.io/ site shows 3 distinct Ethereum testnets. 
+1. ROPSTEN (Revived) - Proof Of Work
+2. KOVAN - Proof Of Authority (Parity only)
+3. RINKEBY - Clique Consensus (Geth only)
+
+It appears that the Casper FFG testnet is entirely separate. The Casper FFG testnet (currently listing 14 active nodes) can be viewed at the following IP address < http://34.203.42.208:3000/ > Unfortunately obtaining enough Casper FFG testnet ETH (minimum deposit of 1, 500) to participate in the PoS validation process seems to be the hurdle at present. After mining for some time, and sending out untargeted requestes for free Casper FFG testnet ETH on social media and so on, curiosity prompted a short lived idea. The following is a failed attempt to send testnet ETH from a ROPSTEN faucet to the Casper FFG testnet address. Needless to say, whilst the wget request from the ROPSTEN faucet succeeded, the ROPSTEN ETH did not appear in the Casper FFG testnet. 
+
+`
+wget http://faucet.ropsten.be:3001/donate/0x33b5f0e0013da8C20c6521A645843b22c1947B23
+Resolving faucet.ropsten.be (faucet.ropsten.be)... 109.123.70.141
+Connecting to faucet.ropsten.be (faucet.ropsten.be)|109.123.70.141|:3001... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 153 [application/json]
+Saving to: 0x33b5f0e0013da8C20c6521A645843b22c1947B23
+100%
+`
+
+`
+web3.eth.getBalance("0x33b5f0e0013da8C20c6521A645843b22c1947B23")
+`
+`
+0
+`
+
+The following section outlines how to clean up in the event that you would like to change modalities i.e. connecting, mining, validating and so on.
 # Cleaning up
 
 To see what docker processes you have running use the following command
@@ -203,7 +205,7 @@ To see what docker processes you have running use the following command
 docker ps
 `
 
-If you want to clean up your environment, you can remove docker processes using the rm command
+If you want to clean up your environment, you can remove docker processes (by name) using the rm command
 
 `
 docker rm validator
