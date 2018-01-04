@@ -162,7 +162,7 @@ The above command produces an array in the following format
 
 `
 web3.eth.accounts
-['0xcFA7032aF32A5200023332E141BaE61f944DE28D', '0xcFA7032aF32A5200023332E141BaE61f944DE28D']
+['0x33b5f0e0013da8C20c6521A645843b22c1947B23', '0x33b5f0e0013da8C20c6521A645843b22c1947B23']
 `
 
 You can view the balance of each account in the array by specifying the index. For example
@@ -179,27 +179,19 @@ The https://testnet.etherscan.io/ site shows 3 distinct Ethereum testnets.
 2. KOVAN - Proof Of Authority (Parity only)
 3. RINKEBY - Clique Consensus (Geth only)
 
-It appears that the Casper FFG testnet is entirely separate. The Casper FFG testnet (currently listing 14 active nodes) can be viewed at the following IP address < http://34.203.42.208:3000/ > Unfortunately obtaining enough Casper FFG testnet ETH (minimum deposit of 1, 500) to participate in the PoS validation process seems to be the hurdle at present. After mining for some time, and sending out untargeted requestes for free Casper FFG testnet ETH on social media and so on, curiosity prompted a short lived idea. The following is a failed attempt to send testnet ETH from a ROPSTEN faucet to the Casper FFG testnet address. Needless to say, whilst the wget request from the ROPSTEN faucet succeeded, the ROPSTEN ETH did not appear in the Casper FFG testnet. 
+The Casper FFG testnet is entirely separate from the above tesnets, for obvious resons. 
+You can view the active listed nodes at the following IP address < http://34.203.42.208:3000/ > 
 
-`
-wget http://faucet.ropsten.be:3001/donate/0x33b5f0e0013da8C20c6521A645843b22c1947B23
-Resolving faucet.ropsten.be (faucet.ropsten.be)... 109.123.70.141
-Connecting to faucet.ropsten.be (faucet.ropsten.be)|109.123.70.141|:3001... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 153 [application/json]
-Saving to: 0x33b5f0e0013da8C20c6521A645843b22c1947B23
-100%
-`
+# Faucet
+Whilst I am currently mining to earn testnet ETH, I would appreciate 1, 500 Casper FFG tesnet ETH at 0x33b5f0e0013da8C20c6521A645843b22c1947B23
 
-`
-web3.eth.getBalance("0x33b5f0e0013da8C20c6521A645843b22c1947B23")
-`
-`
-0
-`
+# Feedback
+If help is required building a faucet for Casper FFG please point me in the right direction to make a start.
 
-The following section outlines how to clean up in the event that you would like to change modalities i.e. connecting, mining, validating and so on.
+Also please feel free to create a pull request of this file if you have any updates/corrections/additional useful information and/or links.
+
 # Cleaning up
+The following section outlines how to clean up in the event that you would like to change modalities i.e. connecting, mining, validating and so on.
 
 To see what docker processes you have running use the following command
 
