@@ -176,33 +176,24 @@ web3.eth.getBlock('latest')
 
 # Checking accounts and account balances
 
-Get your coinbase account balance using the following command at the Python prompt. The coinbase account is where validation rewards are paid
-
-`
-web3.eth.getBalance(web3.eth.coinbase)
-`
-
-you can look at all accounts by using the following commands
+You can list all of your accounts by using the following commands
 
 `
 web3.eth.accounts
 `
 
-this outputs an array as follows.
+The above command produces an array in the following format
 
 `
 web3.eth.accounts
 ['0xcFA7032aF32A5200023332E141BaE61f944DE28D', '0xcFA7032aF32A5200023332E141BaE61f944DE28D']
 `
 
-If you look closely you will see that the web3.eth.coinbase argument which we used above produces the same address as the first element in the array i.e.
+You can view the balance of each account in the array by specifying the index. For example
 
 `
-web3.eth.coinbase
-'0xcFA7032aF32A5200023332E141BaE61f944DE28D'
+web3.eth.getBalance(web3.eth.accounts[0])
 `
-
-
 
 # Cleaning up
 
